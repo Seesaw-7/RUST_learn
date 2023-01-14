@@ -54,5 +54,35 @@ fn main() {
 
     println!("LIFTOFF!!!");
     //This construct eliminates a lot of nesting that would be necessary if you used loop, if, else, and break
+
+
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+
+    while index < 5 {
+        println!("the value is: {}", a[index]);
+
+        index += 1;
+    }
+    //This while is error prone. 
+    // It’s also slow, because the compiler adds runtime code to perform the conditional check of whether the index is within the bounds of the array on every iteration through the loop.
+
+
+    //Looping through each element of a collection using a for loop
+    //Collection!!!
+    for element in a {
+        println!("the value is: {element}");
+    }
+
+
+    //The safety and conciseness of for loops make them the most commonly used loop construct in Rust
+    //Even in situations in which you want to run some code a certain number of times, as in the countdown example, 
+    //most Rustaceans would use a for loop. 
+    //The way to do that would be to use a Range, provided by the standard library, 
+    //which generates all numbers in sequence starting from one number and ending before another number.
+    for number in (1..4).rev() {
+        println!("{number}!");
+    }
+    println!("LIFTOFF!!!");
 }
 
